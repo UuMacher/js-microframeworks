@@ -1,0 +1,26 @@
+{
+  "name": "js-microframeworks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" :"mdx-deck -p 3000",
+    "start:hyperapp" : "npm run start -- hyperapp/slides.mdx",
+    "start:svelte" : "npm run start -- svelte/slides.mdx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhlzr/js-microframeworks.git"
+  },
+  "keywords": [],
+  "author": "Matthieu Holzer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhlzr/js-microframeworks/issues"
+  },
+  "homepage": "https://github.com/mhlzr/js-microframeworks#readme",
+  "devDependencies": {
+    "mdx-deck": "^2.3.2"
+  }
+}
