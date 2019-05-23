@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" :"mdx-deck -p 3000",
-    "start:hyperapp" : "npm run start -- hyperapp/slides.mdx",
-    "start:svelte" : "npm run start -- svelte/slides.mdx"
+    "start": "mdx-deck -p 3000",
+    "start:hyperapp": "npm run start -- hyperapp/slides.mdx",
+    "start:svelte": "npm run start -- svelte/slides.mdx",
+    "develop": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,18 @@
   },
   "homepage": "https://github.com/mhlzr/js-microframeworks#readme",
   "devDependencies": {
-    "mdx-deck": "^2.3.2"
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^2.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mdx-deck": "^2.3.2",
+    "svelte-loader": "^2.13.4",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "dependencies": {
+    "svelte": "^3.4.2"
   }
 }
