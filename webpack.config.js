@@ -8,6 +8,7 @@ module.exports = (env, argv) => {
 
     return {
         entry: {
+            'hyperapp-hello-world': './hyperapp/examples/hello-world/index.js',
             'svelte-hello-world': './svelte/examples/hello-world/index.js'
         },
         mode: isDevelopment ? 'development' : 'production',

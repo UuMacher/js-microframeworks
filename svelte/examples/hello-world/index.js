@@ -1,8 +1,9 @@
+import {createMountContainer} from '../../../dom-util';
 import HelloWorld from './hello-world.svelte';
 
 const app = new HelloWorld({
-	target: document.body,
+	target: createMountContainer('svelte'),
 	props: {
-		name: 'World'
+		name: 'Svelte'
 	}
 });
