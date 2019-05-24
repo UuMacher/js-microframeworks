@@ -1,7 +1,10 @@
 import { h, app } from "hyperapp";
+
 import './index.css';
+
 import { createMountContainer } from '../../../dom-util';
 import { TodoList } from './TodoList.jsx';
+import { TodoInput } from "./TodoInput.jsx";
 
 // Actions
 const Check = (state, todo) => {
@@ -19,6 +22,9 @@ const Uncheck = (state, todo) => {
 };
 
 const Add = (state, todo) => {
+  if (!todo.title.length) {
+    return { ...state };
+  }
   return {
     ...state,
     title: null,
@@ -46,14 +52,19 @@ const state = {
 app({
   init: () => state,
   view: state => (
-      <TodoList
-        todos={state.todos}
+    <div>
+      <h2>Todo</h2>
+      <TodoInput
         title={state.title}
         onInput={Input}
         onAdd={Add}
+      />
+      <TodoList
+        todos={state.todos}
         onCheck={todo => [Check, todo]}
         onUncheck={todo => [Uncheck, todo]}
       />
+    </div>
   ),
   node: createMountContainer('hyperapp')
 })
