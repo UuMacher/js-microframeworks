@@ -9,7 +9,8 @@ module.exports = (env, argv) => {
     return {
         entry: {
             'hyperapp-hello-world': './hyperapp/examples/hello-world/index.js',
-            'svelte-hello-world': './svelte/examples/hello-world/index.js'
+            'hyperapp-todo-list': './hyperapp/examples/todo-list/index.js',
+            /*'svelte-hello-world': './svelte/examples/hello-world/index.js'*/
         },
         mode: isDevelopment ? 'development' : 'production',
         output: {
@@ -23,16 +24,18 @@ module.exports = (env, argv) => {
         module: {
             rules: [
                 {
-                    test: /\.(html|svelte)$/,
-                    exclude: /node_modules/,
-                    use: 'svelte-loader'
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader'],
                 },
                 {
-                    test: /\.js$/,
+                    test: /\.(html|svelte)$/,
                     exclude: /node_modules/,
-                    use: [
-                        'babel-loader'
-                    ]
+                    use: ['svelte-loader']
+                },
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    use: ['babel-loader']
                 },
             ]
         },

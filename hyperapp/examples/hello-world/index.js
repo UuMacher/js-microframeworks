@@ -1,10 +1,9 @@
 import { h, app } from "hyperapp";
 import {createMountContainer} from '../../../dom-util';
-import {HelloWorld} from './hello-world';
+import {HelloWorld} from './hello-world.jsx';
 
 app({
-    init: () => 0,
-    view: state => (
+    view: () => (
       <div>
         <HelloWorld name="Hyperapp"/>
       </div>
