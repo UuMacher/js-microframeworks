@@ -22,7 +22,7 @@ const Uncheck = (state, todo) => {
 };
 
 const Add = (state, todo) => {
-  if (!todo.title.length) {
+  if (!todo || !todo.title || !todo.title.length) {
     return { ...state };
   }
   return {
@@ -30,10 +30,6 @@ const Add = (state, todo) => {
     title: null,
     todos: [...state.todos, todo]
   }
-};
-
-const Input = (state, value) => {
-  return { ...state, title: value }
 };
 
 // State
@@ -56,7 +52,6 @@ app({
       <h2>Todo</h2>
       <TodoInput
         title={state.title}
-        onInput={Input}
         onAdd={Add}
       />
       <TodoList

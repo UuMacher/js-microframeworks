@@ -1,13 +1,27 @@
 import { h } from "hyperapp";
 
-export const TodoInput = ({ title, onInput, onAdd}) => {
+const parseTitle = e => {
+    e.preventDefault();
+    const input = e.target.children[0];
+    const value = input.value.trim();
+
+    if(!value.length) {
+        return null;
+    }
+    else {
+        input.value = null; 
+    }
+
+    return { title: value, done: false }
+}
+
+export const TodoInput = ({ onAdd }) => {
     return (
-        <form onsubmit={[onAdd, e => ({ title: e.target.children[0].value, done: false })]}>
-       <input autofocus
-            type="text"
-            placeholder="Add Todo"
-            value={title}
-            oninput={[onInput, e => e.target.value.trim()]} />
-    </form>
+        <form onsubmit={[onAdd, parseTitle]}>
+            <input autofocus
+                autocomplete="off"
+                type="text"
+                placeholder="Add Todo" />
+        </form>
     )
 };
