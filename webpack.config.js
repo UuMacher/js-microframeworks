@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
         entry: {
             'hyperapp-hello-world': './hyperapp/examples/hello-world/index.js',
             'hyperapp-todo-list': './hyperapp/examples/todo-list/index.js',
-            /*'svelte-hello-world': './svelte/examples/hello-world/index.js'*/
+            'svelte-hello-world': './svelte/examples/hello-world/index.js'
         },
         mode: isDevelopment ? 'development' : 'production',
         output: {
