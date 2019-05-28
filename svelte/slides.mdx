@@ -58,17 +58,42 @@ npm run dev
 
 ---
 
-## Hello World
+## Hello component
+
+### Demo
+
+---
+
+## Defining the Hello component
 
 <CodeSurfer
-  title="Some Title"
-  code={require("!raw-loader!./examples/hello-world/hello-world.svelte").default}
+  title="hello.svelte"
+  code={require("!raw-loader!./examples/hello-world/hello.svelte").default}
   lang="javascript"
   showNumbers={false}
-  dark={false}
+  dark={true}
   steps={[
     { lines: [5], notes: "Basic template" },
     { range: [1, 3] , notes: "Define external properties"},
     { notes: "Hello World" }
+  ]}
+/>
+
+---
+
+## Using the Hello component
+
+<CodeSurfer
+  title="index.js"
+  code={require("!raw-loader!./examples/hello-world/index.js").default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { lines: [2], notes: "Import the component" },
+    { lines: [4, 10] , notes: "Create a new Instance of the component"},
+    { lines: [5, 6] , notes: "Pass the DOM mounting point"},
+    { lines: [7, 8, 9] , notes: "Pass the properties"},
+    { notes: "Profit! 🍾" }
   ]}
 />
