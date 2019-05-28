@@ -1,5 +1,7 @@
 export { theme } from '../theme';
 
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
 # Svelte 3.0
 
 <blockquote cite="https://svelte.dev/">Cybernetically enhanced web apps</blockquote>
@@ -57,3 +59,16 @@ npm run dev
 ---
 
 ## Hello World
+
+<CodeSurfer
+  title="Some Title"
+  code={require("!raw-loader!./examples/hello-world/hello-world.svelte").default}
+  lang="javascript"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    { lines: [5], notes: "Basic template" },
+    { range: [1, 3] , notes: "Define external properties"},
+    { notes: "Hello World" }
+  ]}
+/>
