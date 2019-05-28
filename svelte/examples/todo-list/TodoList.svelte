@@ -5,11 +5,16 @@
   export let onCheck;
   export let onUncheck;
 
-  $: doneTodos = todos.filter(todo => todo.done);
   $: openTodos = todos.filter(todo => !todo.done);
+  $: doneTodos = todos.filter(todo => todo.done);
+
+  $: {
+    console.log(openTodos, doneTodos);
+  }
 </script>
 
 <div>
+<h2>Todo</h2>
   <ul>
     {#each openTodos as todo}
       <li>
@@ -17,6 +22,7 @@
       </li>
     {/each}
   </ul>
+  <h2>Done</h2>
   <ul>
     {#each doneTodos as todo}
       <Todo item={todo} {onUncheck} />

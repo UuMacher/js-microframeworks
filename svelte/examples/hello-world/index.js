@@ -1,3 +1,4 @@
+import '../../../index.css';
 import {createMountContainer} from '../../../dom-util';
 import Hello from './hello.svelte';
 

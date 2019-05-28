@@ -1,4 +1,5 @@
 import { h, app } from "hyperapp";
+import '../../../index.css';
 import {createMountContainer} from '../../../dom-util';
 import {HelloWorld} from './hello-world.jsx';
 

@@ -30,12 +30,10 @@
 
   const onCheck = todo => {
     update(todo, { done: true });
-    console.log(todos);
   };
 
   const onUncheck = todo => {
     update(todo, { done: false });
-    console.log(todos);
   };
 </script>
 

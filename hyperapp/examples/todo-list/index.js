@@ -1,7 +1,5 @@
 import { h, app } from "hyperapp";
-
-import './index.css';
-
+import '../../../index.css';
 import { createMountContainer } from '../../../dom-util';
 import { TodoList } from './TodoList.jsx';
 import { TodoInput } from "./TodoInput.jsx";
@@ -49,11 +47,12 @@ app({
   init: () => state,
   view: state => (
     <div>
-      <h2>Todo</h2>
+
       <TodoInput
         title={state.title}
         onAdd={Add}
       />
+
       <TodoList
         todos={state.todos}
         onCheck={todo => [Check, todo]}

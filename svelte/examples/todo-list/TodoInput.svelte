@@ -16,5 +16,5 @@
 </script>
 
 <form on:submit={onSubmit}>
-  <input autofocus autocomplete="off" type="text" placeholder="Add Todo" />
+  <input autocomplete="off" type="text" placeholder="Add Todo" />
 </form>

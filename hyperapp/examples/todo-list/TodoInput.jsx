@@ -5,11 +5,11 @@ const parseTitle = e => {
     const input = e.target.children[0];
     const value = input.value.trim();
 
-    if(!value.length) {
+    if (!value.length) {
         return null;
     }
     else {
-        input.value = null; 
+        input.value = null;
     }
 
     return { title: value, done: false }
@@ -18,8 +18,7 @@ const parseTitle = e => {
 export const TodoInput = ({ onAdd }) => {
     return (
         <form onsubmit={[onAdd, parseTitle]}>
-            <input autofocus
-                autocomplete="off"
+            <input autocomplete="off"
                 type="text"
                 placeholder="Add Todo" />
         </form>
