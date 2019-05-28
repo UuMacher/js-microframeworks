@@ -9,8 +9,8 @@ module.exports = (env, argv) => {
 
     return {
         entry: {
-            'hyperapp-hello-world': './hyperapp/examples/hello-world/index.js',
-            'hyperapp-todo-list': './hyperapp/examples/todo-list/index.js',
+            'hyperapp-hello-world': './hyperapp/examples/hello-world/index.jsx',
+            'hyperapp-todo-list': './hyperapp/examples/todo-list/index.jsx',
             'svelte-hello-world': './svelte/examples/hello-world/index.js',
             'svelte-todo-list': './svelte/examples/todo-list/index.js'
         },

@@ -1,12 +1,12 @@
 import { h, app } from "hyperapp";
 import '../../../index.css';
 import {createMountContainer} from '../../../dom-util';
-import {HelloWorld} from './hello-world.jsx';
+import {Hello} from './hello.jsx';
 
 app({
     view: () => (
       <div>
-        <HelloWorld name="Hyperapp"/>
+        <Hello name="Hyperapp"/>
       </div>
     ),
     node: createMountContainer('hyperapp')

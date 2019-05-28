@@ -1,5 +1,7 @@
 export { theme } from '../theme';
 
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
 # Hyperapp  3.0
 
 <blockquote cite="https://github.com/jorgebucaran/hyperapp">Hyperapp is a JavaScript micro-framework for building web interfaces.</blockquote>
@@ -61,6 +63,44 @@ import { h, app } from "hyperapp"
 
 ---
 
-## Hello World 
+## Hello component
+
+### Demo
+
+---
+
+## Defining the Hello component
+
+<CodeSurfer
+  title="hello.jsx"
+  code={require("!raw-loader!./examples/hello-world/hello.jsx").default}
+  lang="jsx"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { lines: [3], notes: "Template as JSX" },
+    { lines: [1] , notes: "Always import the hypertext function"},
+    { notes: "Boom 💥" }
+  ]}
+/>
+
+---
+
+## Using the Hello component
+
+<CodeSurfer
+  title="index.js"
+  code={require("!raw-loader!./examples/hello-world/index.js").default}
+  lang="jsx"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { lines: [4], notes: "Import the component" },
+    { lines: [6, 13] , notes: "Create a new Instance of the component"},
+    { lines: [12] , notes: "Pass the DOM mounting point"},
+    { range: [7, 11], notes: "Define the viewm, pass the properties"},
+    { range: [3, 13], notes: "Profit! 🍾" }
+  ]}
+/>
 
 

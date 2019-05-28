@@ -7,14 +7,10 @@
 
   $: openTodos = todos.filter(todo => !todo.done);
   $: doneTodos = todos.filter(todo => todo.done);
-
-  $: {
-    console.log(openTodos, doneTodos);
-  }
 </script>
 
 <div>
-<h2>Todo</h2>
+  <h2>Todo</h2>
   <ul>
     {#each openTodos as todo}
       <li>
