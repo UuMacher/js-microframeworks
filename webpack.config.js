@@ -13,6 +13,7 @@ module.exports = (env, argv) => {
             'hyperapp-todo-list': './hyperapp/examples/todo-list/index.jsx',
             'svelte-hello-world': './svelte/examples/hello-world/index.js',
             'svelte-todo-list': './svelte/examples/todo-list/index.js',
+            'svelte-counter': './svelte/examples/counter/index.js',
         },
         mode: isDevelopment ? 'development' : 'production',
         output: {
