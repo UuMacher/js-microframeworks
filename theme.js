@@ -30,14 +30,11 @@ export const theme = {
             wordBreak: 'break-all'
         }
     },
+    strong : {
+        color: '#c3388d'
+    },
     code: {
         fontSize: '0.5em'
-    },
-    table: {
-        marginBottom: '1em'
-    },
-    td: {
-        textAlign: 'center'
     },
     ul: {
         listStylePosition: 'inside'

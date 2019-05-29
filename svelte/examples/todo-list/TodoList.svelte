@@ -21,7 +21,9 @@
   <h2>Done</h2>
   <ul>
     {#each doneTodos as todo}
-      <Todo item={todo} {onUncheck} />
+      <li>
+        <Todo item={todo} {onUncheck} />
+      </li>
     {/each}
   </ul>
 </div>

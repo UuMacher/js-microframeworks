@@ -1,6 +1,7 @@
 export { theme } from '../theme';
 
-import { CodeSurfer } from "mdx-deck-code-surfer"
+import { Split } from 'mdx-deck/layouts';
+import { CodeSurfer } from "mdx-deck-code-surfer";
 
 # Svelte 3.0
 
@@ -23,7 +24,7 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
 
 ## Principles
 - Declarative components (.svelte)
-- JavaScript, HTML, CSS
+- JavaScript, HTML, CSS (scoped)
 - Special syntax for reactive statements (labels)
 - Svelte converts components into plain JavaScript
 
@@ -40,19 +41,21 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
 
 https://svelte.dev/repl
 
-<iframe src="https://svelte.dev/repl" width="800px" height="400px"></iframe> 
+
 
 
 ---
+
 ## Getting started
 ### Use degit / svelte-template
-```
+```bash
 npx degit sveltejs/template my-svelte-project
 cd my-svelte-project
 npm install
 npm run dev
 ```
 ---
+
 ## Getting started
 ### Use a bundler 
 - rollup (https://github.com/rollup/rollup-plugin-svelte)
@@ -97,19 +100,121 @@ npm run dev
 
 ---
 
+## Reactive declarations
+
+- like spreadsheets (excel)
+- uses "special" label syntax
+
+---
+
+<CodeSurfer
+  title="Reactive declarations"
+  code={require("!raw-loader!./examples/reactive.js").default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[
+        { range: [1, 4], notes: "Dependent variables" },
+        { range: [1, 6], notes: "No reactive updates" },
+        { tokens : { 10: [0, 1] }, notes: "Sveltes uses labels..." },
+        { lines: [10], notes: "...for reactive declarations"},
+        { range: [8, 12], notes: "✨ Magic! ✨" }
+  ]}
+/>
+
+---
+
 ## Todo-List
 
+### Demo
+
+---
+
+<CodeSurfer
+  title="TodoList.svelte"
+  code={require("!raw-loader!./examples/todo-list/TodoList.svelte").default}
+  lang="javascript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+        { range: [4, 6], notes: "Defining external properties" },
+        { range: [8, 9], notes: "Reactive variables" },
+        { ranges : [[15, 19], [23, 27]], notes: "Each blocks" },
+        { notes: "That's it!" }
+  ]}
+/>
+
+---
+
+## Stores
+
+* like Redux, vuex, etc. but simplified
+* usage across components without __prop-drilling__
+* subscribe/unsubscribe methods
+* always unsubscribe to avoud memory leaks
+* prefix $ automates subscription
+
+### Types
+* __writable__: store can be altered
+* __readable__: can't be modified outside init-function
+* __derived__: derived from another store
+
+---
+
+## Lifecycle events
+
+* like Angular or React lifecycle hooks (onInit, componentDidMount,...)
+
+### Methods
+* __onMount__: runs when the component is mounted to the DOM
+* __onDestroy__: runs when the componed is unmounted
+* __beforeUpdate__: runs before any state change
+* __afterUpdate__: runs after any state change
+
+---
+
 ## Counter
-Using stores
-subscriptions
-dollar sign 
-memory leaks
 
-Counter increment anzahl der tage wetter vorschau
-https://www.weather.com/api/location/44418/2019/4/27/
+### Demo
 
+---
 
-### Events
-### Bindings
-### Lifecycle events
-### Slots
+<CodeSurfer
+  title="Counter.svelte"
+  code={require("!raw-loader!./examples/counter/Counter.svelte").default}
+  lang="javascript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+        { range: [22, 25], notes: "Mutiple components sharing one store" },
+        { lines: [3], notes: "The Store is imported" },
+        { lines: [3, 22], notes: "The store can be used in the template" },
+        { lines: [2], range: [10, 18], notes: "Lifecycle methods" },
+        { ranges : [[15, 19], [23, 27]], notes: "Each blocks" },
+        { notes: "That's it!" }
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="store.js"
+  code={require("!raw-loader!./examples/counter/store.js").default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[
+        {notes: "Writable store initialization" },
+  ]}
+/>
+
+---
+
+## What else?
+
+* Events
+* Bindings
+* Slots
+* svelte/motion
+* svelte/transition
+* svelte/animate
