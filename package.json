@@ -8,6 +8,7 @@
     "start": "mdx-deck -p 3000",
     "start:hyperapp": "npm run start -- hyperapp/slides.mdx",
     "start:svelte": "npm run start -- svelte/slides.mdx",
+    "server": "node server.js",
     "develop": "webpack-dev-server",
     "build": "webpack"
   },

@@ -4,7 +4,7 @@
   export let onCheck;
 </script>
 
-<label class={item.done ? 'is-done' : ''}>
+<label class:is-done={item.done}>
   <input
     type="checkbox"
     on:click={() => (item.done ? onUncheck(item) : onCheck(item))}

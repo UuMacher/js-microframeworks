@@ -17,14 +17,14 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
 - No virtual DOM
 - Surgically updates the DOM
 - Vanilla JS
-- *fast* (faster than Angular, Ember, React, Preact, Riot, Mithrill, ...)
+- *fast* (faster than Angular, Ember, React, Mithrill, ...)
 
 ---
 
 ## Principles
-- Declarative components (.svelte, single file)
-    - JavaScript, HTML, CSS
-    - Special syntax for reactive statements
+- Declarative components (.svelte)
+- JavaScript, HTML, CSS
+- Special syntax for reactive statements (labels)
 - Svelte converts components into plain JavaScript
 
 ---
@@ -39,6 +39,9 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
 ### Use the REPL (Read-eval-print loop)
 
 https://svelte.dev/repl
+
+<iframe src="https://svelte.dev/repl" width="800px" height="400px"></iframe> 
+
 
 ---
 ## Getting started
@@ -63,10 +66,8 @@ npm run dev
 
 ---
 
-## Defining the Hello component
-
 <CodeSurfer
-  title="hello.svelte"
+  title="Defining the component - hello.svelte"
   code={require("!raw-loader!./examples/hello-world/hello.svelte").default}
   lang="javascript"
   showNumbers={false}
@@ -80,10 +81,8 @@ npm run dev
 
 ---
 
-## Using the Hello component
-
 <CodeSurfer
-  title="index.js"
+  title="Using the component - index.js"
   code={require("!raw-loader!./examples/hello-world/index.js").default}
   lang="javascript"
   showNumbers={false}
@@ -96,3 +95,22 @@ npm run dev
     { range: [3, 11], notes: "Profit! 🍾" }
   ]}
 />
+
+---
+
+## Todo-List
+
+## Counter
+Using stores
+subscriptions
+dollar sign 
+memory leaks
+
+Counter increment anzahl der tage wetter vorschau
+https://www.weather.com/api/location/44418/2019/4/27/
+
+
+### Events
+### Bindings
+### Lifecycle events
+### Slots

@@ -12,11 +12,11 @@ module.exports = (env, argv) => {
             'hyperapp-hello-world': './hyperapp/examples/hello-world/index.jsx',
             'hyperapp-todo-list': './hyperapp/examples/todo-list/index.jsx',
             'svelte-hello-world': './svelte/examples/hello-world/index.js',
-            'svelte-todo-list': './svelte/examples/todo-list/index.js'
+            'svelte-todo-list': './svelte/examples/todo-list/index.js',
         },
         mode: isDevelopment ? 'development' : 'production',
         output: {
-            filename: `js/[name].[hash:6]${isProduction ? '.min' : ''}.js`,
+            filename: `js/[name].js`,
             path: path.resolve(__dirname, 'dist')
         },
         devtool: isDevelopment ? 'eval-source-map' : 'nosource-source-map',
