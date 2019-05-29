@@ -1,11 +1,8 @@
 import '../../../index.css';
 import {createMountContainer} from '../../../dom-util';
-import Hello from './hello.svelte';
+import HelloWorld from './HelloWorld.svelte';
 
-const app = new Hello({
+const app = new HelloWorld({
 	// could be any DOM-node, e.g.: document.body
-	target: createMountContainer('svelte'), 
-	props: {
-		name: 'Svelte'
-	}
+	target: createMountContainer('svelte')
 });
