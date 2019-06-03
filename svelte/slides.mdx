@@ -13,7 +13,6 @@ import { CodeSurfer } from "mdx-deck-code-surfer";
 
 - Svelte = Compiler
 - _No runtime_
-- Write less code
 - Truly reactive
 - No virtual DOM
 - Surgically updates the DOM
@@ -151,10 +150,10 @@ npm run dev
 * like Redux, vuex, etc. but simplified
 * usage across components without __prop-drilling__
 * subscribe/unsubscribe methods
-* always unsubscribe to avoud memory leaks
+* always unsubscribe to avoid memory leaks
 * prefix $ automates subscription
 
-### Types
+### Store types
 * __writable__: store can be altered
 * __readable__: can't be modified outside init-function
 * __derived__: derived from another store
@@ -167,7 +166,7 @@ npm run dev
 
 ### Methods
 * __onMount__: runs when the component is mounted to the DOM
-* __onDestroy__: runs when the componed is unmounted
+* __onDestroy__: runs when the component is unmounted
 * __beforeUpdate__: runs before any state change
 * __afterUpdate__: runs after any state change
 
@@ -187,11 +186,11 @@ npm run dev
   dark={true}
   steps={[
         { range: [22, 25], notes: "Mutiple components sharing one store" },
-        { lines: [3], notes: "The Store is imported" },
+        { lines: [3], notes: "The store is imported" },
         { lines: [3, 22], notes: "The store can be used in the template" },
-        { lines: [2], range: [10, 18], notes: "Lifecycle methods" },
-        { ranges : [[15, 19], [23, 27]], notes: "Each blocks" },
-        { notes: "That's it!" }
+        { lines: [12], notes: "Updating the store" },
+        { lines: [2, 10, 14, 16, 18], notes: "Using lifecycle methods" },
+        { notes: "The complete code" }
   ]}
 />
 
@@ -210,6 +209,21 @@ npm run dev
 
 ---
 
+<CodeSurfer
+  title="Progress.svelte"
+  code={require("!raw-loader!./examples/counter/Progress.svelte").default}
+  lang="html"
+  showNumbers={true}
+  dark={true}
+  steps={[
+        {lines: [3], notes: "Importing the store" },
+        {lines: [2, 5], notes: "Creating a second, derived store" },
+        {lines: [17], notes: "Using the derived store" },
+  ]}
+/>
+
+---
+
 ## What else?
 
 * Events
@@ -218,3 +232,16 @@ npm run dev
 * svelte/motion
 * svelte/transition
 * svelte/animate
+
+---
+
+## When to use svelte?
+
+### When you have
+  * time to learn the syntax
+  * full control of the build-process
+
+### When you need/want
+  * small widgets, micro-apps
+  * reactive behaviour (calculations, editors, ...)
+  * minimal filesizes

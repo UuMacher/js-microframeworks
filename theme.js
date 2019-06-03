@@ -3,10 +3,6 @@ import { dark } from 'mdx-deck/themes';
 
 export const theme = {
     ...dark,
-    wrapper: {
-        maxWidth: '90vw',
-        margin: '0 auto'
-    },
     googleFont: 'https://fonts.googleapis.com/css?family=Roboto:100,400,800',
     font: 'Roboto, sans-serif',
     a: {
@@ -14,14 +10,14 @@ export const theme = {
     },
     blockquote: {
         backgroundColor: 'rgba(128, 128, 128, 0.4)',
-        borderLeft: '0.5em solid #393991',
+        borderLeft: '0.5em solid #9a86fd',
         fontSize: '1.2em',
         fontWeight: '100',
         margin: '1em auto 2em auto',
         maxWidth: '90vw',
         padding: '0.5em',
         '&:after': {
-            color: '#c3388d',
+            color: '#f39',
             content: 'attr(cite)',
             display: 'inline-block',
             fontSize: '0.8em',
@@ -31,7 +27,7 @@ export const theme = {
         }
     },
     strong : {
-        color: '#c3388d'
+        color: '#f39'
     },
     code: {
         fontSize: '0.5em'
@@ -41,5 +37,14 @@ export const theme = {
     },
     ol: {
         listStylePosition: 'inside'
+    },
+    h1: {
+        color: '#f39'
+    },
+    h2: {
+        color: '#f39'
+    },
+    h3 : {
+        color: '#9a86fd'
     }
 }
