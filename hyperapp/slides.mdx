@@ -9,30 +9,35 @@ import { CodeSurfer } from "mdx-deck-code-surfer";
 ---
 
 ## Features
-- Small _(2.0.0-beta.12)_
-    - ~1.8KB _(brotli compressed)_
-    - ~4.1KB _(uncompressed)_
-- Minimal
-    - Immutable State
-    - Unidirectional data-flow
-- Declarative
-    - JSX support
-- Standalone
-    - State management
-    - Virtual DOM engine
-    - Functional Components
-    - View memoization
+### Small _(2.0.0-beta.12)_
+* ~ 1.8/4.1 KB (compressed /uncompressed)
+
+### Component based
+* Immutable state
+* Unidirectional data-flow
+
+---
+
+## Features
+### Declarative
+* JSX support
+
+### Standalone
+* State management
+* Virtual DOM engine
+* Functional Components
+* View memoization
 
 ---
 
 ## Principles
 
-- View
-    - User interface
-- State
-    - Single state stree
-- Actions
-    - State transistions
+### View
+= User interface
+### State
+= Single state stree
+### Actions
+= State transitions
 
 ---
 
@@ -69,46 +74,111 @@ import { h, app } from "hyperapp"
 
 ---
 
-## Defining the Hello component
-
 <CodeSurfer
-  title="hello.jsx"
+  title="Defining the component - hello.jsx"
   code={require("!raw-loader!./examples/hello-world/hello.jsx").default}
   lang="jsx"
   showNumbers={false}
   dark={true}
   steps={[
-    { lines: [3], notes: "Template as JSX" },
-    { lines: [1] , notes: "Always import the hypertext function"},
+    { lines: [1], notes: "Inject calls h() function for each node" },
+    { lines: [4], notes: "Template as JSX" },
+    { lines: [2] , notes: "Always import the hypertext function"},
     { notes: "Boom 💥" }
   ]}
 />
 
---- 
-
-## JSX & Hypertext
-
-Kurz JSX und Hypertext erklären
-Vorteile/Nachteile
-
-Vielleicht in einer META-Slide generell Komponenten basiertes HTMl/JS erklären?
 ---
 
-## Using the Hello component
+## JSX
+
+* JavaScript XML or JavaScript Syntax Extension
+* syntactic sugar
+* transpiled into plain JavaScript (using babel)
+* hyperapp _can_ be used without JSX
+* https://jasonformat.com/wtf-is-jsx/
+
+### Example
+
+```jsx
+  // JSX
+  const Hello = ({ name }) => (<h1>Hello {name}</h1>);
+```
+
+gets transpiled to
+
+```javascript
+  // Hypertext function calls
+  const Hello = h('h1', null, "Hello ", name);
+```
+---
 
 <CodeSurfer
-  title="index.js"
+  title="Using the component - index.js"
   code={require("!raw-loader!./examples/hello-world/index.jsx").default}
   lang="jsx"
-  showNumbers={false}
+  showNumbers={true}
   dark={true}
   steps={[
     { lines: [4], notes: "Import the component" },
-    { lines: [6, 13] , notes: "Create a new Instance of the component"},
-    { lines: [12] , notes: "Pass the DOM mounting point"},
-    { range: [7, 11], notes: "Define the viewm, pass the properties"},
-    { range: [3, 13], notes: "Profit! 🍾" }
+    { lines: [6, 14] , notes: "Create a new app instance of hyperapp"},
+    { lines: [7] , notes: "Pass the initial state"},
+    { lines: [13] , notes: "Pass the DOM mounting point"},
+    { lines: [8, 9, 11, 12], notes: "Define the view"},
+    { lines: [10], notes: "Use the imported component, pass the properties"},
+    { notes: "Profit! 🍾" }
   ]}
 />
 
+---
+
+## Todo-List
+
+### Demo
+
+---
+
+<CodeSurfer
+  title="todo-list/index.jsx"
+  code={require("!raw-loader!./examples/todo-list/index.jsx").default}
+  lang="jsx"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [8, 11], notes: "Import and use the state" },
+    { lines: [7, 15, 19, 20], notes: "Import and pass the actions" },
+    { ranges: [[4,5],[14,21]], notes: "Import and use the components" }
+  ]}
+/>
+
+---
+
+## Counter
+
+### Demo
+
+---
+
+## What else?
+
+* @hyperapp/router
+* @hyperapp/render (SSR)
+* zaceno/hyperapp-transitions
+* okwolf/hyperapp-freeze (state immutability)
+* https://github.com/hyperapp/awesome
+
+---
+
+## When to use hyperapp?
+
+### When you have
+  * time to learn the concepts
+  * some/no control of the build process (jsx/no jsx)
+  * no ES6 module-support (amd, global support)
+  * not too many nested components (prop-drilling)
+
+### When you need/want
+  * small widgets, micro-apps
+  * a state-driven ui
+  * DOM reyhdration (_navigation example_)
 

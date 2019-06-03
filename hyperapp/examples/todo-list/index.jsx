@@ -2,7 +2,7 @@ import { h, app } from 'hyperapp';
 import '../../../index.css';
 import { createMountContainer } from '../../../dom-util';
 import { TodoList } from './TodoList.jsx';
-import { TodoInput } from "./TodoInput.jsx";
+import { TodoInput } from './TodoInput.jsx';
 
 import { Add, Check, Uncheck } from './actions';
 import { state } from './state';
