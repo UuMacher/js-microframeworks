@@ -9,10 +9,13 @@ import { Incrementer } from './Incrementer.jsx';
 import { Decrementer } from './Decrementer.jsx';
 import { Progress } from './Progress.jsx';
 
-const Tick = (state) => ({ ...state, count: state.count + 1 })
-
 app({
     init: () => ({ count: 0 }),
+    subscriptions: () => [
+        interval(Increment, {
+            delay: 1000
+        })
+    ],
     view: state => (
         <div>
             <h1>Counter</h1>
@@ -28,10 +31,5 @@ app({
             <Progress count={state.count} />
         </div>
     ),
-    subscriptions: () => [
-        interval(Tick, {
-            delay: 1000
-        })
-    ],
     node: createMountContainer('hyperapp')
 })

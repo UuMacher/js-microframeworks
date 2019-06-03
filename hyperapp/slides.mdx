@@ -9,7 +9,7 @@ import { CodeSurfer } from "mdx-deck-code-surfer";
 ---
 
 ## Features
-### Small _(2.0.0-beta.12)_
+### Small _(2.0.0-beta.18)_
 * ~ 1.8/4.1 KB (compressed /uncompressed)
 
 ### Component based
@@ -156,6 +156,39 @@ gets transpiled to
 ## Counter
 
 ### Demo
+
+---
+
+<CodeSurfer
+  title="Counter - index.js"
+  code={require("!raw-loader!./examples/counter/index.jsx").default}
+  lang="jsx"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [13], notes: "Initial state" },
+    { lines: [6] , notes: "Import the actions"},
+    { range: [8, 10] , notes: "Import the components"},
+    { lines: [34] , notes: "Pass the DOM mounting point"},
+    { lines: [19, 20, 21, 22, 32, 33], notes: "Define the view"},
+    { range: [23, 31], notes: "Use the imported component, pass the properties and actions"},
+    { lines: [2], range : [14, 18], notes: "Define the subscriptions"},
+    { notes: "That's it 🤘" }
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Counter - actions.js"
+  code={require("!raw-loader!./examples/counter/actions.js").default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { notes: "Clean external actions ❤️" }
+  ]}
+/>
 
 ---
 
