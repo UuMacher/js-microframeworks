@@ -42,6 +42,7 @@
     "webpack-dev-server": "^3.4.1"
   },
   "dependencies": {
-    "hyperapp": "^2.0.0-beta.12"
+    "@hyperapp/time": "0.0.7",
+    "hyperapp": "^2.0.0-beta.18"
   }
 }

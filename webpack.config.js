@@ -11,6 +11,7 @@ module.exports = (env, argv) => {
         entry: {
             'hyperapp-hello-world': './hyperapp/examples/hello-world/index.jsx',
             'hyperapp-todo-list': './hyperapp/examples/todo-list/index.jsx',
+            'hyperapp-counter': './hyperapp/examples/counter/index.jsx',
             'svelte-hello-world': './svelte/examples/hello-world/index.js',
             'svelte-todo-list': './svelte/examples/todo-list/index.js',
             'svelte-counter': './svelte/examples/counter/index.js',
