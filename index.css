@@ -39,5 +39,22 @@ label > span {
     padding-left: 0.2em;
 }
 
+nav {
+    bottom: 0;
+    filter: grayscale();
+    font-size: 1.8em;
+    padding: 1em;
+    position: fixed;
+    right: 0;
+}
+
+nav button {
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: inherit;
+}
+
 .hyperapp {outline: 2px solid #1cd1d8; padding: 1em; margin: 1em}
 .svelte {outline: 2px solid #da1c83; padding: 1em; margin: 1em}

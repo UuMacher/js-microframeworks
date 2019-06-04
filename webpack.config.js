@@ -15,6 +15,7 @@ module.exports = (env, argv) => {
             'svelte-hello-world': './svelte/examples/hello-world/index.js',
             'svelte-todo-list': './svelte/examples/todo-list/index.js',
             'svelte-counter': './svelte/examples/counter/index.js',
+            'code-presenter': './code-presenter.js'
         },
         mode: isDevelopment ? 'development' : 'production',
         output: {
