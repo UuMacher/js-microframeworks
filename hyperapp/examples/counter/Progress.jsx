@@ -2,7 +2,7 @@ import { h } from 'hyperapp';
 
 const css = progress => 
 ({
-    backgroundColor: 'deeppink',
+    backgroundColor: '#1cd1d8',
     padding: '0.2em',
     margin: '0.2em',
     maxWidth: '100%',

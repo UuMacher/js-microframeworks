@@ -3,11 +3,12 @@ import { interval } from '@hyperapp/time';
 import '../../../index.css';
 import { createMountContainer } from '../../../dom-util';
 
-import { Increment, Decrement } from './actions';
+import { Increment, Decrement, Reset } from './actions';
 
 import { Incrementer } from './Incrementer.jsx';
 import { Decrementer } from './Decrementer.jsx';
 import { Progress } from './Progress.jsx';
+import { Resetter } from './Resetter.jsx';
 
 app({
     init: () => ({ count: 0 }),
@@ -29,6 +30,7 @@ app({
                 onDecrement={Decrement}
             />
             <Progress count={state.count} />
+            <Resetter onReset={Reset} />
         </div>
     ),
     node: createMountContainer('hyperapp')

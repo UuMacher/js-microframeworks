@@ -26,7 +26,6 @@ nav.appendChild(buttonPrevious);
 nav.appendChild(buttonNext);
 document.body.appendChild(nav);
 
-
 show(current);
 
 

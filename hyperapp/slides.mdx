@@ -49,13 +49,13 @@ import { CodeSurfer } from "mdx-deck-code-surfer";
 
 ## Getting started
 
-### Usage as an ES-Module
+### Usage as an ES6-Module
 
-```bash
+```console
 npm i hyperapp@beta
 ```
 
-```
+```javascript
 import { h, app } from "hyperapp";
 ```
 
@@ -81,9 +81,9 @@ import { h, app } from "hyperapp";
   showNumbers={false}
   dark={true}
   steps={[
-    { lines: [1], notes: "Inject calls h() function for each node" },
     { lines: [4], notes: "Template as JSX" },
     { lines: [2] , notes: "Always import the hypertext function"},
+    { lines: [1], notes: "Inject calls h() function for each node" },
     { notes: "Boom 💥" }
   ]}
 />
@@ -93,7 +93,7 @@ import { h, app } from "hyperapp";
 ## JSX
 
 * JavaScript XML or JavaScript Syntax Extension
-* syntactic sugar
+* __syntactic sugar__
 * transpiled into plain JavaScript (using babel)
 * hyperapp _can_ be used without JSX
 * https://jasonformat.com/wtf-is-jsx/
@@ -158,6 +158,19 @@ gets transpiled to
 ---
 
 <CodeSurfer
+  title="todo-list/state.js"
+  code={require("!raw-loader!./examples/todo-list/state.js").default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    { notes: "The initial state is a plain Object" },
+  ]}
+/>
+
+---
+
+<CodeSurfer
   title="todo-list/actions.js"
   code={require("!raw-loader!./examples/todo-list/actions.js").default}
   lang="javascript"
@@ -170,6 +183,18 @@ gets transpiled to
     { ranges: [[2,9]], notes: "Immutability! 🧙️" },
   ]}
 />
+
+---
+
+## Subscriptions
+* reactions to __external events__ (e.g. time, resize, network, ...)
+* alternative to event-listeners (no need to add/remove listeners)
+* "subscription to an event generator"
+
+### Helper
+* @hyperapp/time
+* @hyperapp/events
+* @hyperapp/websocket
 
 ---
 
@@ -186,13 +211,13 @@ gets transpiled to
   showNumbers={true}
   dark={true}
   steps={[
-    { lines: [13], notes: "Initial state" },
+    { lines: [14], notes: "Initial state" },
     { lines: [6] , notes: "Import the actions"},
-    { range: [8, 10] , notes: "Import the components"},
-    { lines: [34] , notes: "Pass the DOM mounting point"},
-    { lines: [19, 20, 21, 22, 32, 33], notes: "Define the view"},
-    { range: [23, 31], notes: "Use the imported component, pass the properties and actions"},
-    { lines: [2], range : [14, 18], notes: "Define the subscriptions"},
+    { range: [8, 11] , notes: "Import the components"},
+    { lines: [36] , notes: "Pass the DOM mounting point"},
+    { ranges: [[20, 23], [34,35]], notes: "Define the view"},
+    { range: [24, 33], notes: "Use the imported component, pass the properties and actions"},
+    { lines: [2], range : [15, 19], notes: "Define the subscriptions"},
     { notes: "That's it 🤘" }
   ]}
 />

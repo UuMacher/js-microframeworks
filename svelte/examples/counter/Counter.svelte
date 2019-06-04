@@ -4,6 +4,7 @@
   import Decrement from "./Decrement.svelte";
   import Increment from "./Increment.svelte";
   import Progress from "./Progress.svelte";
+  import Reset from "./Reset.svelte";
 
   let interval;
 
@@ -23,3 +24,4 @@
 <Increment />
 <Decrement />
 <Progress />
+<Reset />

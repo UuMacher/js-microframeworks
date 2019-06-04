@@ -5,6 +5,6 @@ export const Decrementer = ({ count, onDecrement }) => {
         <div>
             <button type="button" onclick={onDecrement}>Decrement (-)</button>
             <output>{count}</output>
-        </div >
+        </div>
     );
 };
