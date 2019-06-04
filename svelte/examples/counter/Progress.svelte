@@ -6,7 +6,7 @@
 </script>
 
 <style>
-  .p {
+  .bar {
     background-color: deeppink;
     padding: 0.2em;
     margin: 0.2em;
@@ -14,4 +14,4 @@
   }
 </style>
 
-<div class="p" style="width:{$progress}px">{$progress}</div>
+<div class="bar" style="width:{$progress}px">{$progress}</div>
