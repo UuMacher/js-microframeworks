@@ -1,14 +1,20 @@
 export const Check = (state, todo) => {
     return {
         ...state,
-        todos: [...state.todos.filter(item => item !== todo), { ...todo, done: true }]
+        todos: [
+            ...state.todos.filter(item => item !== todo),
+            { ...todo, done: true }
+        ]
     }
 };
 
 export const Uncheck = (state, todo) => {
     return {
         ...state,
-        todos: [...state.todos.filter(item => item !== todo), { ...todo, done: false }]
+        todos: [
+            ...state.todos.filter(item => item !== todo),
+            { ...todo, done: false }
+        ]
     }
 };
 

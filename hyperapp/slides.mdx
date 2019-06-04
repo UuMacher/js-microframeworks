@@ -2,7 +2,7 @@ export { theme } from '../theme';
 
 import { CodeSurfer } from "mdx-deck-code-surfer";
 
-# Hyperapp  3.0
+# Hyperapp 2.0
 
 <blockquote cite="https://github.com/jorgebucaran/hyperapp">Hyperapp is a JavaScript micro-framework for building web interfaces.</blockquote>
 
@@ -12,9 +12,9 @@ import { CodeSurfer } from "mdx-deck-code-surfer";
 ### Small _(2.0.0-beta.18)_
 * ~ 1.8/4.1 KB (compressed /uncompressed)
 
-### Component based
-* Immutable state
-* Unidirectional data-flow
+### Today's common approach
+* Immutable state (like in Redux, Vuex)
+* Unidirectional data-flow (like React, Angular, Vue)
 
 ---
 
@@ -22,7 +22,7 @@ import { CodeSurfer } from "mdx-deck-code-surfer";
 ### Declarative
 * JSX support
 
-### Standalone
+### Batteries included
 * State management
 * Virtual DOM engine
 * Functional Components
@@ -51,18 +51,18 @@ import { CodeSurfer } from "mdx-deck-code-surfer";
 
 ### Usage as an ES-Module
 
-```
+```bash
 npm i hyperapp@beta
 ```
 
 ```
-import { h, app } from "hyperapp"
+import { h, app } from "hyperapp";
 ```
 
 ### "Old-school" via script-tag (_simplified_)
 
 ```html
-<script src="https://unpkg.com/hyperapp@1.2.9/dist/hyperapp.js"></script>
+<script src="https://unpkg.com/hyperapp@2.0.0-beta.18/dist/hyperapp.js"></script>
 <script>const {h, app} = window.Hyperapp;</script>
 ``` 
 
@@ -98,6 +98,10 @@ import { h, app } from "hyperapp"
 * hyperapp _can_ be used without JSX
 * https://jasonformat.com/wtf-is-jsx/
 
+---
+
+## JSX
+
 ### Example
 
 ```jsx
@@ -121,7 +125,7 @@ gets transpiled to
   dark={true}
   steps={[
     { lines: [4], notes: "Import the component" },
-    { lines: [6, 14] , notes: "Create a new app instance of hyperapp"},
+    { lines: [1, 6, 14] , notes: "Create a new app instance of hyperapp"},
     { lines: [7] , notes: "Pass the initial state"},
     { lines: [13] , notes: "Pass the DOM mounting point"},
     { lines: [8, 9, 11, 12], notes: "Define the view"},
@@ -148,6 +152,22 @@ gets transpiled to
     { lines: [8, 11], notes: "Import and use the state" },
     { lines: [7, 15, 19, 20], notes: "Import and pass the actions" },
     { ranges: [[4,5],[14,21]], notes: "Import and use the components" }
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="todo-list/actions.js"
+  code={require("!raw-loader!./examples/todo-list/actions.js").default}
+  lang="javascript"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [1, 11, 21], notes: "Since Hyperapp 2 actions are named in Pascal Case" },
+    { lines: [1, 11, 21], notes: "Each action gets the current state as a parameter and an optional payload..." },
+    { range: [2,9], notes: "...and returns a whole new state" },
+    { ranges: [[2,9]], notes: "Immutability! 🧙️" },
   ]}
 />
 
@@ -209,6 +229,10 @@ gets transpiled to
   * some/no control of the build process (jsx/no jsx)
   * no ES6 module-support (amd, global support)
   * not too many nested components (prop-drilling)
+
+---
+
+## When to use hyperapp?
 
 ### When you need/want
   * small widgets, micro-apps
