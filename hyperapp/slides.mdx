@@ -1,5 +1,7 @@
 export { theme } from '../theme';
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monokai, shadesOfPurple} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CodeSurfer } from "mdx-deck-code-surfer";
 
 # Hyperapp 2.0
@@ -51,20 +53,25 @@ import { CodeSurfer } from "mdx-deck-code-surfer";
 
 ### Usage as an ES6-Module
 
-```console
+<SyntaxHighlighter language="bash" style={monokai}>
 npm i hyperapp@beta
-```
+</SyntaxHighlighter>
 
-```javascript
-import { h, app } from "hyperapp";
-```
+<SyntaxHighlighter language="javascript" style={monokai}>
+{'import { h, app } from "hyperapp";'}
+</SyntaxHighlighter>
+
+---
+
+## Getting started
 
 ### "Old-school" via script-tag (_simplified_)
 
-```html
-<script src="https://unpkg.com/hyperapp@2.0.0-beta.18/dist/hyperapp.js"></script>
+<SyntaxHighlighter language="html" style={monokai}>
+{`<script src="https://unpkg.com/.../hyperapp.js"></script>
 <script>const {h, app} = window.Hyperapp;</script>
-``` 
+`}
+</SyntaxHighlighter>
 
 ---
 
@@ -100,21 +107,23 @@ import { h, app } from "hyperapp";
 
 ---
 
-## JSX
+## JSX - Example
 
-### Example
-
-```jsx
-  // JSX
+<SyntaxHighlighter language="javascript" style={monokai}>
+  {
+  `// JSX
   const Hello = ({ name }) => (<h1>Hello {name}</h1>);
-```
+  `}
+</SyntaxHighlighter>
 
 gets transpiled to
 
-```javascript
-  // Hypertext function calls
+<SyntaxHighlighter language="javascript" style={monokai}>
+    {
+  `// Hypertext function calls
   const Hello = h('h1', null, "Hello ", name);
-```
+  `}
+</SyntaxHighlighter>
 ---
 
 <CodeSurfer

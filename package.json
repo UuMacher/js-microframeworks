@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@hyperapp/time": "0.0.7",
-    "hyperapp": "^2.0.0-beta.18"
+    "hyperapp": "^2.0.0-beta.18",
+    "react-syntax-highlighter": "^10.3.0"
   }
 }

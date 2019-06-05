@@ -1,6 +1,7 @@
 export { theme } from '../theme';
 
-import { Split } from 'mdx-deck/layouts';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monokai, shadesOfPurple} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CodeSurfer } from "mdx-deck-code-surfer";
 
 # Svelte 3.0
@@ -44,12 +45,18 @@ https://svelte.dev/repl
 
 ## Getting started
 ### Use degit / svelte-template
-```console
-npx degit sveltejs/template my-svelte-project
+<SyntaxHighlighter language="bash" style={monokai}>
+{`npx degit sveltejs/template my-svelte-project
 cd my-svelte-project
-npm install
+`}
+</SyntaxHighlighter>
+
+<SyntaxHighlighter language="bash" style={monokai}>
+{`npm install
 npm run dev
-```
+`}
+</SyntaxHighlighter>
+
 ---
 
 ## Getting started
