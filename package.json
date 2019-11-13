@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhlzr/js-microframeworks.git"
+    "url": "git+https://github.com/UuMacher/js-microframeworks.git"
   },
   "keywords": [],
   "author": "Matthieu Holzer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mhlzr/js-microframeworks/issues"
+    "url": "https://github.com/UuMacher/js-microframeworks/issues"
   },
-  "homepage": "https://github.com/mhlzr/js-microframeworks#readme",
+  "homepage": "https://github.com/UuMacher/js-microframeworks#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
