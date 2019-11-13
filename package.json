@@ -1,8 +1,7 @@
 {
   "name": "js-microframeworks",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A short overview of some JavaScript microframeworks",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "mdx-deck -p 3000",
