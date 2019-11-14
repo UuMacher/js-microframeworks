@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/UuMacher/js-microframeworks#readme",
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-react-jsx": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^2.0.2",
     "css-loader": "^2.1.1",
@@ -34,15 +34,15 @@
     "mini-css-extract-plugin": "^0.7.0",
     "raw-loader": "^2.0.0",
     "style-loader": "^0.23.1",
-    "svelte": "^3.4.4",
-    "svelte-loader": "^2.13.4",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.4.1"
+    "svelte": "^3.14.1",
+    "svelte-loader": "^2.13.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
     "@hyperapp/time": "0.0.7",
-    "hyperapp": "^2.0.0-beta.18",
-    "react-syntax-highlighter": "^10.3.0"
+    "hyperapp": "^2.0.3",
+    "react-syntax-highlighter": "^10.3.5"
   }
 }
